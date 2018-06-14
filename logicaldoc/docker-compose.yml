@@ -1,0 +1,23 @@
+version: '2'
+services:
+   logicaldoc:
+      container_name: logicaldoc
+      image: logicaldoc/logicaldoc-ee
+      ports:
+       - 8083:8080
+      environment:
+       - LDOC_MEMORY=2000
+       - LDOC_USERNO=LogicalDOC-activation-code
+       - DB_HOST=1.1.1.1
+       - DB_PORT=3306
+       - DB_NAME=logicaldoc
+       - DB_USER=root
+       - DB_PASSWORD=logicaldoc
+      volumes:
+       - ./ldoc/conf:/opt/logicaldoc/conf
+       - ./ldoc/repository:/opt/logicaldoc/repository
+
+    #    nproc: 65535
+    #    nofile:
+    #      soft: 6000
+    #      hard: 40000

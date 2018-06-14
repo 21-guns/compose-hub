@@ -1,0 +1,14 @@
+mariadb:
+    image: mariadb 
+    container_name: mariadb
+    environment:
+     - MYSQL_ROOT_PASSWORD=changeme
+     - collation-server=utf8mb4_unicode_ci
+     - character-set-server=utf8mb4 
+    restart: always
+    ports:
+     - 3306:3306
+    volumes:
+     - ./mariadb:/var/lib/mysql
+     - ./mariadb/log:/var/log/mysql
+     - ./mariadb/config:/etc/mysql

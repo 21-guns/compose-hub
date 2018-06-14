@@ -1,0 +1,11 @@
+tower:
+    image: ybalt/ansible-tower 
+    container_name: tower
+    privileged: true
+    environment:
+     - appendonly=yes
+    restart: always
+    ports:
+     - 1443:443
+    volumes:
+     - ./tower/data:/var/lib/postgresql/9.6/main

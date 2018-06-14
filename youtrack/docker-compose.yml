@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+ youtrack:
+    image: 'uniplug/youtrack:latest'
+    ports:
+      - '8081:80'
+    volumes:
+      - 'youtrack_data:/opt/youtrack/data/'
+      - 'youtrack_backup:/opt/youtrack/backup/'
+    restart: always
+volumes:
+  youtrack_data:
+    driver: local
+  youtrack_backup:
+    driver: local
