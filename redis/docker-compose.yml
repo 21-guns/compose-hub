@@ -1,0 +1,11 @@
+redis:
+    image: redis 
+    container_name: redis
+    command: redis-server --requirepass 50vHMjxvg0P8
+    environment:
+     - appendonly=yes
+    restart: always
+    ports:
+     - 6379:6379
+    volumes:
+     - ./redis:/data

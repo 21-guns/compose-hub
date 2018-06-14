@@ -1,0 +1,16 @@
+version: '2'
+services:
+    rabbitmq:
+      image: 'rabbitmq:3-management'
+      restart: always
+      hostname: 'rabbit-node-1'
+      environment:
+        - RABBITMQ_DEFAULT_USER=rabbit
+        - RABBITMQ_DEFAULT_PASS=rabbit
+      ports:
+        - '15672:15672'
+        - '25672:25672'
+        - '5672:5672'
+        - '4369:4369'
+      volumes:
+        - ./rabbitmq:/var/lib/rabbitmq

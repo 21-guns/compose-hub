@@ -1,0 +1,10 @@
+gateone:
+    image: liftoff/gateone
+    container_name: gateone
+    restart: always
+    ports:
+     - 2443:8000
+    volumes:
+     - ./gateone/gateone:/etc/gateone
+     - ./gateone/users:/gateone/users
+     - ./gateone/logs:/gateone/logs

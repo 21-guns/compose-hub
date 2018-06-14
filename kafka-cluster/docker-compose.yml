@@ -1,0 +1,6 @@
+version: '2'
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - "12181-12189:2181"

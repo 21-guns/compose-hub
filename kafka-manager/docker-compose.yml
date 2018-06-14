@@ -1,0 +1,7 @@
+kafka_manager:
+    image: sheepkiller/kafka-manager
+    restart: always
+    ports:
+      - "9000:9000"
+    environment:
+        ZK_HOSTS: kafka_host:2181

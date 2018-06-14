@@ -1,0 +1,12 @@
+phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+     - PMA_ARBITRARY=1
+     - PMA_HOST=1.1.1.1
+     - PMA_PORT=3306
+    restart: always
+    ports:
+     - 8080:80
+    volumes:
+     - /sessions

@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  nginx:
+    image: 'nginx:latest'
+    restart: always
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./nginx/vhosts:/etc/nginx/conf/vhosts
+      - ./nginx/certs:/etc/nginx/certs
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf

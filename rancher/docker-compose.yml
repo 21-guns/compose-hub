@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  rancher:
+    image: rancher/rancher:latest
+    restart: unless-stopped
+    ports:
+      - 11180:80
+      - 11443:443
+    volumes:
+      - /root/rancher/data:/var/lib/rancher
